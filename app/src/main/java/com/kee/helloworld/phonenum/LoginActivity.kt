@@ -1,13 +1,17 @@
 package com.kee.helloworld.phonenum
 
 import android.app.PendingIntent
+import android.content.Context
 import android.os.Bundle
+import android.telephony.TelephonyManager
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.identity.GetPhoneNumberHintIntentRequest
 import com.google.android.gms.auth.api.identity.Identity
+import java.util.Locale
 
 //https://developer.android.com/identity/phone-number-hint?hl=zh-cn
 //自动获取手机号
@@ -16,6 +20,17 @@ class LoginActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+
+// 获取 SIM 卡所属国家（ISO 3166-1 alpha-2 格式，例如 "cn"、"ph"）
+        val simCountryIso = telephonyManager.simCountryIso?.lowercase() ?: ""
+
+// 转为国家名
+        val locale = Locale("", simCountryIso)
+        val countryName = locale.displayCountry
+
+        Toast.makeText(this,("CountrySIM国家码: $simCountryIso, 国家: $countryName"), Toast.LENGTH_SHORT).show()
 
 
         val request = GetPhoneNumberHintIntentRequest.builder().build()
