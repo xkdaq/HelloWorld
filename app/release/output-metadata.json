@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 5,
-      "versionName": "1.0.5",
-      "outputFile": "HelloWorld-1.0.5-5-2025-10-31-release.apk"
+      "versionCode": 6,
+      "versionName": "1.0.6",
+      "outputFile": "HelloWorld-1.0.6-6-2025-12-19-release.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/HelloWorld-1.0.5-5-2025-10-31-release.dm"
+        "baselineProfiles/1/HelloWorld-1.0.6-6-2025-12-19-release.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/HelloWorld-1.0.5-5-2025-10-31-release.dm"
+        "baselineProfiles/0/HelloWorld-1.0.6-6-2025-12-19-release.dm"
       ]
     }
   ],
