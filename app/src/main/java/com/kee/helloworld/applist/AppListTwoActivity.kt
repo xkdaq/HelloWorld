@@ -1,20 +1,19 @@
 package com.kee.helloworld.applist
 
 import android.content.Context
-import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
-import android.content.pm.ResolveInfo
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.kee.helloworld.databinding.LayoutMainBinding
 import org.json.simple.JSONArray
 import org.json.simple.JSONObject
 
-class AppListMainActivity : AppCompatActivity() {
+class AppListTwoActivity : AppCompatActivity() {
 
     val binding by lazy { LayoutMainBinding.inflate(layoutInflater) }
 
@@ -28,9 +27,7 @@ class AppListMainActivity : AppCompatActivity() {
             binding.text.text = getDeviceInfo("${tolTc.size}")
         }, 2000)
 
-        binding.btn.setOnClickListener {
-            startActivity(Intent(this, AppListTwoActivity::class.java))
-        }
+        binding.btn.isVisible = false
     }
 
 
@@ -40,6 +37,7 @@ class AppListMainActivity : AppCompatActivity() {
     fun getDeviceInfo(size: String): String {
         val info = StringBuilder()
 
+        info.append("getInstalledPackages获取\n")
         info.append("获取到applist数量：$size \n\n\n")
 
         // Android版本信息
@@ -106,34 +104,18 @@ class AppListMainActivity : AppCompatActivity() {
         val jsonArray = JSONArray()
         try {
             val pm = context.packageManager
-            val intent = Intent(Intent.ACTION_MAIN, null).apply {
-                addCategory(Intent.CATEGORY_LAUNCHER)
-            }
 
-            val list: List<ResolveInfo> =
+            val packageList: List<PackageInfo> =
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                    pm.queryIntentActivities(
-                        intent,
-                        PackageManager.ResolveInfoFlags.of(0L)
+                    pm.getInstalledPackages(
+                        PackageManager.PackageInfoFlags.of(0)
                     )
                 } else {
                     @Suppress("DEPRECATION")
-                    pm.queryIntentActivities(intent, 0)
+                    pm.getInstalledPackages(0)
                 }
 
-            for (resolveInfo in list) {
-                val activityInfo = resolveInfo.activityInfo
-
-                val packageInfo: PackageInfo =
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                        pm.getPackageInfo(
-                            activityInfo.packageName,
-                            PackageManager.PackageInfoFlags.of(0)
-                        )
-                    } else {
-                        @Suppress("DEPRECATION")
-                        pm.getPackageInfo(activityInfo.packageName, 0)
-                    }
+            for (packageInfo in packageList) {
 
                 val jsonObject = JSONObject().apply {
                     put("version_name", packageInfo.versionName)
@@ -148,6 +130,7 @@ class AppListMainActivity : AppCompatActivity() {
                     put("package", packageInfo.packageName)
                     put("in_time", packageInfo.firstInstallTime)
                     put("up_time", packageInfo.lastUpdateTime)
+
                     val appInfo = packageInfo.applicationInfo
                     val appType =
                         if (appInfo != null && (ApplicationInfo.FLAG_SYSTEM and appInfo.flags) != 0) {
@@ -165,5 +148,6 @@ class AppListMainActivity : AppCompatActivity() {
         }
         return jsonArray
     }
+
 
 }
