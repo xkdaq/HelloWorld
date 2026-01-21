@@ -24,6 +24,7 @@ class MainActivity : ComponentActivity() {
 
         Handler().postDelayed({
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+//            startActivity(Intent(this@MainActivity, EmailActivity::class.java))
         }, 3000)
 
     }

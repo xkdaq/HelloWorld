@@ -80,7 +80,14 @@ dependencies {
 //    implementation libs.androidx.ui.tooling.preview
 //    implementation libs.androidx.material3
 
-    implementation libs.play.services.auth
+    //implementation libs.play.services.auth
+    //implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+    implementation 'com.google.android.gms:play-services-auth-base:18.0.4'
+    implementation "com.google.android.gms:play-services-auth:21.4.0"
+//    implementation "com.google.android.gms:play-services-auth:19.2.0"
+
     implementation('com.googlecode.json-simple:json-simple:1.1.1') {
         exclude group: 'junit'
     }
