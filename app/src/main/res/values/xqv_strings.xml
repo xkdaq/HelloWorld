@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- user_number -->
+    <string name="nloqlr">nloqlr</string>
+    <!-- amount_available -->
+    <string name="ccmbo">ccmbo</string>
+    <!-- index -->
+    <string name="agqj">agqj</string>
+    <!-- position -->
+    <string name="oyiqe">oyiqe</string>
+    <!-- flag -->
+    <string name="yuqz">yuqz</string>
+    <!-- host -->
+    <string name="cfoheuu">cfoheuu</string>
+    <!-- loan_type -->
+    <string name="jcc">jcc</string>
+    <!-- system_id -->
+    <string name="vsaksh">vsaksh</string>
+    <!-- api_host -->
+    <string name="thrumid">thrumid</string>
+    <!-- order_no -->
+    <string name="mtb">mtb</string>
+    <!-- open_url -->
+    <string name="xepx">xepx</string>
+    <!-- image_path -->
+    <string name="hyngm">hyngm</string>
+    <!-- image_path_2 -->
+    <string name="qcffxjd">qcffxjd</string>
+    <!-- orderPosition -->
+    <string name="kssicck">kssicck</string>
+    <!-- access_token -->
+    <string name="ntv">ntv</string>
+    <!-- user_name -->
+    <string name="xhai">xhai</string>
+    <!-- tab -->
+    <string name="kruqpx">kruqpx</string>
+    <!-- package_id -->
+    <string name="fckcxr">fckcxr</string>
+    <!-- appid -->
+    <string name="cffnu">cffnu</string>
+</resources>

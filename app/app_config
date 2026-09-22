@@ -1,0 +1,23 @@
+
+应用名：HelloWorld
+包名：
+假包名：
+
+选择的AES类型: AES-128-CBC
+package_key: wOmsirEfw9ewQGVu
+sign_key: Ff6ChJwFRqMoshgu
+aes_key: pKSIbA5Wl7WsPmJ4
+aes_iv: t2RzGAg2NkGXIqpV
+
+中转服务器配置:
+aes_key: SVZjzprScdGAlFLl
+aes_iv: BJtYWLu8sxUwN4tJ
+
+入口：
+
+cashword关键字：HelloWorld
+短信唤醒：helloworld://helloworldclient/openapp
+js方法关键字：HelloWorld（例如：HelloWorldBack）
+js方法的参数映射：{"user_number":"nloqlr","amount_available":"ccmbo","index":"agqj","position":"oyiqe","flag":"yuqz","host":"cfoheuu","loan_type":"jcc","system_id":"vsaksh","api_host":"thrumid","order_no":"mtb","open_url":"xepx","image_path":"hyngm","image_path_2":"qcffxjd","orderPosition":"kssicck","access_token":"ntv","user_name":"xhai","tab":"kruqpx","package_id":"fckcxr","appid":"cffnu"}
+埋点： 
+H5地址映射：
